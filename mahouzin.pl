@@ -1,9 +1,3 @@
-
-
-member(X,[X|_]).
-member(X,[_|L]):-
-    member(X, L).
-
 num(1).
 num(2).
 num(3).
@@ -13,6 +7,10 @@ num(6).
 num(7).
 num(8).
 num(9).
+
+member(X,[X|_]).
+member(X,[_|L]):-
+    member(X, L).
 
 ban(Board):-
     B0=[],
@@ -33,7 +31,7 @@ mahouzin(Board):-
     W2 is N4+N5+N6, W2=W1,
     W3 is N7+N8+N9, W3=W2,
     H1 is N1+N4+N7, H1=W3,
-    H2 is N2+N5+N8, H2=W3,
-    H3 is N3+N6+N9, H3=H1,
+    H2 is N2+N5+N8, H2=H1,
+    H3 is N3+N6+N9, H3=H2,
     U is N7+N5+N3, U=H3,
     D is N1+N5+N9, D=U.
